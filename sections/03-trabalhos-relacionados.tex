@@ -1,7 +1,128 @@
 % =====================================================================
-%  Trabalhos Relacionados
+%  3 Trabalhos Relacionados
 % =====================================================================
 \section{Trabalhos Relacionados}
 \label{sec:relacionados}
 
-\pendente{criação de rotinas (Barricelli et al.); casas multiusuário (Geeng e Roesner; Zeng e Roesner); adaptações da MIS (Fortunato et al.); análise de avaliações de usuários (Atefi et al.)}
+Os trabalhos relacionados a este estudo se organizam em quatro linhas: a
+criação de rotinas em assistentes de voz, as dinâmicas entre moradores em
+casas inteligentes, a avaliação de comunicabilidade com a MIS e a análise
+de avaliações de usuários. A Tabela~\ref{tab:relacionados} compara os
+principais trabalhos com a proposta deste artigo.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Comparação entre os trabalhos relacionados e este artigo.}
+  \label{tab:relacionados}
+  \small
+  \begin{tabular}{>{\raggedright\arraybackslash}p{3.2cm}
+                  >{\raggedright\arraybackslash}p{5.6cm}
+                  >{\raggedright\arraybackslash}p{2.1cm}
+                  >{\raggedright\arraybackslash}p{2.1cm}}
+    \hline
+    \textbf{Trabalho} & \textbf{Objeto e método} &
+    \textbf{Múltiplos moradores} & \textbf{Participantes} \\
+    \hline
+    \citet{barricelli2024routines} & Criação de rotinas por voz e multimodal; experimentos controlados & Não & Sim \\
+    \citet{king2024sasha} & Rotinas geradas por LLM; levantamento e estudo com usuários & Não & Sim \\
+    \citet{geeng2019control} & Relações entre moradores; entrevistas e amostragem de experiência & Sim & Sim \\
+    \citet{koshy2021passenger} & Pilotos e passageiros, incluindo rotinas; entrevistas e levantamento & Sim & Sim \\
+    \citet{zeng2019multiuser} & Controle de acesso multiusuário; protótipo implantado em domicílios & Sim & Sim \\
+    \citet{carvalho2023simsr} & Comunicabilidade e acessibilidade; SIM-SR & Não & Não \\
+    \citet{atefi2020reviews} & Problemas em \textit{skills} da Alexa; análise de avaliações & Não & Não \\
+    \hline
+    Este trabalho & Rotinas no aplicativo Alexa; MIS com lente para múltiplos interlocutores e avaliações públicas & Sim & Não \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Criação de rotinas em assistentes de voz}
+
+\citet{barricelli2022multimodal} propuseram criar rotinas usando os
+recursos multimodais (visão, fala e toque) da Alexa em dispositivos Echo
+Show e relataram que os usuários consideraram essa forma mais fácil do que
+a interação habitual com o aplicativo Alexa. Em seguida,
+\citet{barricelli2024routines} desenvolveram \textit{skills} da Amazon e
+\textit{actions} do Google para transferir a criação de rotinas do
+aplicativo para o próprio alto-falante. Em dois experimentos controlados
+com 40 participantes, a interação multimodal foi preferida à interação
+apenas por voz, e a qualidade percebida pareceu depender da marca do
+dispositivo.
+
+Com os grandes modelos de linguagem (LLMs), surgiram propostas de criar
+rotinas a partir de pedidos em linguagem natural. O Sasha responde a
+comandos pouco especificados, como ``deixe aconchegante'', executando
+planos com os dispositivos disponíveis ou criando rotinas de automação;
+seus autores mostram que os LLMs raciocinam de forma criativa, mas
+apresentam padrões de falha que reduzem sua
+utilidade~\cite{king2024sasha}. O GreenIFTTT usa um LLM para ajudar o
+usuário a criar rotinas de economia de energia e foi avaliado quanto à
+usabilidade em um estudo exploratório com 13
+participantes~\cite{giudici2024greenifttt}.
+
+Esses trabalhos buscam facilitar a autoria de rotinas e avaliam a
+experiência de quem as cria. Nenhum deles analisa o que a interface de
+criação comunica sobre as demais pessoas da casa, que são afetadas pelas
+rotinas sem participar de sua criação.
+
+\subsection{Dinâmicas entre moradores em casas inteligentes}
+
+Os estudos apresentados na Seção~\ref{sec:multiusuario} investigam as
+relações entre moradores por meio de entrevistas, amostragem de
+experiência, levantamentos e implantações em domicílios
+reais~\cite{geeng2019control,koshy2021passenger,zeng2017concerns,zeng2019multiuser}.
+Deles derivam recomendações de design que dizem respeito diretamente às
+interfaces de configuração. \citet{geeng2019control} recomendam que, ao
+configurar um dispositivo, os aplicativos perguntem se há outras pessoas
+na casa e facilitem o acesso delas. \citet{koshy2021passenger} propõem
+controles que aproximem os passageiros das funcionalidades adequadas aos
+seus hábitos e que lhes deem mais controle sobre os dados que
+compartilham. \citet{zeng2019multiuser} prototiparam um aplicativo com
+controle de acesso e notificações de atividade e observaram que, em
+algumas casas, as normas sociais de convivência dispensaram os controles
+técnicos, enquanto o aumento da complexidade das opções reduziu a
+usabilidade.
+
+Esses trabalhos partem da experiência relatada pelos moradores. A forma
+como as interfaces comerciais comunicam a autoria, o controle e os
+efeitos das rotinas, que pode ser examinada sem envolver participantes,
+não é objeto de análise sistemática nesses estudos.
+
+\subsection{Avaliação de comunicabilidade com a MIS}
+
+A MIS tem sido aplicada e adaptada a diferentes contextos. A MIS
+Científica foi ilustrada por seus autores na análise de como o editor
+Simple CSS comunica seu \textit{feedback} a usuários não especialistas,
+com resultados triangulados com material publicado na web sobre o
+sistema, incluindo opiniões de usuários, e com a inspeção de outro
+sistema~\cite{desouza2010scientific,fortunato2025ihc}. A SIM-SR foi
+aplicada em três estudos de caso e levou os avaliadores a considerar o
+impacto dos problemas de acessibilidade na comunicabilidade, indo além da
+identificação de violações das diretrizes WCAG~\cite{carvalho2023simsr}.
+\citet{fortunato2025ihc} sistematizam essas e outras variantes e indicam
+que a combinação de versões do método em um mesmo sistema ainda precisa
+ser investigada.
+
+Até onde pudemos verificar, a MIS não foi aplicada a aplicativos de
+configuração de assistentes de voz nem a rotinas de casas inteligentes.
+
+\subsection{Análise de avaliações de usuários}
+
+As avaliações publicadas por usuários em lojas de aplicativos são uma
+fonte de evidência que não exige recrutamento. \citet{atefi2020reviews}
+analisaram mais de 100 mil avaliações de mais de 2.800 \textit{skills} da
+Alexa e, por meio de codificação aberta, identificaram 16 tipos de
+problemas, dos quais os mais frequentes envolvem conteúdo, integração com
+serviços e dispositivos, erros e regressões. O estudo trata das
+\textit{skills}, e não do aplicativo usado para configurar o assistente e
+suas rotinas.
+
+\subsection{Posicionamento deste trabalho}
+
+A Tabela~\ref{tab:relacionados} resume os trabalhos discutidos. Este
+artigo combina três aspectos que aparecem separados na literatura: o foco
+nas rotinas, a consideração de múltiplos moradores e uma avaliação que não
+envolve participantes. Para isso, aplica a MIS com uma lente para
+múltiplos interlocutores e triangula os resultados com avaliações
+públicas do aplicativo, seguindo a estrutura da MIS
+Científica~\cite{desouza2010scientific}.

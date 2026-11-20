@@ -1,7 +1,200 @@
 % =====================================================================
-%  Fundamentação Teórica
+%  2 Fundamentação Teórica
 % =====================================================================
 \section{Fundamentação Teórica}
 \label{sec:fundamentacao}
 
-\pendente{Engenharia Semiótica e metacomunicação; signos metalinguísticos, estáticos e dinâmicos; casas inteligentes multiusuário e pessoas afetadas; integridade contextual; desenvolvimento pelo usuário final}
+Esta seção apresenta os conceitos que sustentam a análise: a Engenharia
+Semiótica e o Método de Inspeção Semiótica, os papéis que as pessoas
+assumem em casas inteligentes compartilhadas, as rotinas como forma de
+desenvolvimento pelo usuário final e a noção de integridade contextual.
+
+\subsection{Engenharia Semiótica e metacomunicação}
+\label{sec:engsem}
+
+A Engenharia Semiótica é uma teoria explicativa da IHC que trata a
+interface de um sistema interativo como uma comunicação enviada por seu
+designer aos usuários~\cite{desouza2005semiotic}. Essa comunicação é
+unidirecional: o designer não está presente durante o uso e fala por meio
+da interface, que os usuários interpretam enquanto interagem com
+ela~\cite{fortunato2025ihc}. Por se tratar de uma comunicação sobre como
+se comunicar com o sistema, a teoria a denomina metacomunicação.
+
+O conteúdo da metamensagem pode ser parafraseado por um modelo em que o
+designer diz ao usuário qual é o seu entendimento de quem ele é, do que
+ele quer ou precisa fazer, de que maneiras prefere fazê-lo e por quê; e
+que, por isso, aquele é o sistema projetado para ele, que pode ou deve
+ser usado de determinada forma para atingir um conjunto de objetivos
+compatíveis com essa visão~\cite[p.~25]{desouza2005semiotic}. Esse modelo
+se dirige a um interlocutor, o ``você'' a quem o designer fala. Em
+sistemas de uso individual, esse interlocutor coincide com a pessoa que
+usa o sistema. Em um dispositivo instalado em um espaço coletivo, cabe
+perguntar quem é esse ``você'', questão retomada na
+Seção~\ref{sec:multiusuario}.
+
+A metamensagem é composta por signos, classificados em três
+tipos~\cite{desouza2006sim,desouza2009methods}. Os \textbf{signos
+estáticos} expressam o estado do sistema e podem ser interpretados sem
+relações causais ou temporais, considerando apenas os elementos presentes
+na interface em um dado momento, como rótulos, estados de botões e opções
+selecionadas. Os \textbf{signos dinâmicos} expressam o comportamento do
+sistema e só podem ser percebidos por meio da interação, como o efeito de
+acionar um botão. Os \textbf{signos metalinguísticos} referem-se a outros
+signos da interface e são usados pelo designer para explicar o que eles
+significam e como usá-los, como mensagens de ajuda, dicas e mensagens de
+erro~\cite{fortunato2025ihc}.
+
+A qualidade de um sistema interativo, nessa perspectiva, é a sua
+comunicabilidade: a capacidade de comunicar de forma organizada e
+consistente a lógica, a intenção e os princípios de
+design~\cite{desouza2005semiotic,desouza2009methods}. A teoria propõe dois
+métodos principais para avaliá-la. O Método de Avaliação de
+Comunicabilidade (MAC) observa usuários reais e avalia como a
+metamensagem é recebida. O Método de Inspeção Semiótica (MIS) é conduzido
+por especialistas e avalia como a metamensagem é
+emitida~\cite{desouza2009methods,fortunato2025ihc}. Por não envolver
+participantes, o MIS é o método adotado neste trabalho.
+
+\subsection{O Método de Inspeção Semiótica e suas variantes}
+\label{sec:mis}
+
+No MIS, o avaliador analisa o que cada tipo de signo comunica,
+reconstrói a metamensagem do designer e identifica potenciais rupturas de
+comunicação~\cite{desouza2006sim}. O método é organizado nas seguintes
+etapas~\cite{desouza2006sim,fortunato2025ihc}:
+
+\begin{itemize}
+  \item \textbf{Preparação:} inspeção informal, definição do foco da
+        análise, dos usuários pretendidos, dos objetivos apoiados pelo
+        sistema e dos cenários de inspeção;
+  \item \textbf{Etapas 1, 2 e 3:} inspeção dos signos metalinguísticos,
+        estáticos e dinâmicos, respectivamente, com a reconstrução de uma
+        versão da metamensagem e a identificação de potenciais rupturas a
+        partir de cada tipo de signo;
+  \item \textbf{Etapa 4:} contraste das três versões da metamensagem, em
+        busca de significados contraditórios ou ambíguos;
+  \item \textbf{Etapa 5:} apreciação final da comunicabilidade do sistema,
+        registrada em um relatório.
+\end{itemize}
+
+Durante a inspeção, o avaliador atua como representante dos usuários e
+deve ser especialista em IHC e conhecer a Engenharia
+Semiótica~\cite{desouza2006sim,fortunato2025ihc}.
+
+Uma revisão sistemática recente identificou cinco variantes do método,
+que, somadas à versão original, formam seis versões~\cite{fortunato2025ihc}.
+A \textbf{MIS Científica}~\cite{desouza2010scientific} acrescenta uma
+questão de pesquisa na preparação e uma etapa de triangulação dos
+resultados com evidências de outras fontes, como materiais publicados na
+web sobre o sistema, entre eles opiniões de usuários e perguntas
+frequentes~\cite{fortunato2025ihc}. A MIS com signos dêiticos inclui uma
+nova classe de signos, que se refere a elementos externos à interface: a
+pessoa (identidade do usuário), o espaço e o tempo da
+interação~\cite{fortunato2025ihc}. As demais variantes inspecionam mais de
+uma versão da metamensagem: a CP-SIM, entre plataformas de um mesmo
+sistema; a MIS mediada por leitor de tela
+(SIM-SR)~\cite{carvalho2023simsr}, entre a interface original e a
+interface percebida por meio do leitor de tela; e a SIM-HInt, entre os
+componentes de sistemas de integração humano-computador~\cite{fortunato2025ihc}.
+
+As variantes ampliam o método na direção de novos tipos de signos e de
+múltiplas versões ou componentes de um sistema. Nenhuma das cinco, tal
+como descritas por \citet{fortunato2025ihc}, tem como foco a existência de
+mais de um destinatário da metamensagem, que é a situação examinada neste
+trabalho.
+
+\subsection{Casas inteligentes com múltiplos usuários}
+\label{sec:multiusuario}
+
+Diferentemente de computadores e smartphones, dispositivos de casa
+inteligente instalados em espaços compartilhados tornam-se dispositivos
+usados por várias pessoas e que afetam todas elas~\cite{geeng2019control}.
+Os estudos sobre esses ambientes descrevem papéis distintos entre os
+moradores. \citet{geeng2019control} usam o termo \textit{smart home
+driver} para quem toma a iniciativa de adotar a tecnologia, sobretudo
+instalando os dispositivos, e \textit{passive user} para quem participa
+menos dessas decisões. \citet{koshy2021passenger} distinguem os usuários
+\textit{pilotos}, que introduzem novas funcionalidades na casa, instalando
+dispositivos ou criando rotinas, dos usuários \textit{passageiros}, que
+usam o que já existe. Em seu levantamento, pelo menos 52\% dos
+respondentes que moravam com outras pessoas viviam em casas com ao menos
+um piloto e um passageiro~\cite{koshy2021passenger}.
+
+Esses estudos convergem em alguns achados. Há uma concentração de
+conhecimento, acesso e controle na pessoa que seleciona e instala os
+dispositivos, que frequentemente também é a única com acesso à conta à
+qual eles estão vinculados~\cite{geeng2019control}. Muitos
+\textit{drivers} não consultam os demais moradores antes de instalar
+dispositivos, e estes passam a depender deles quando algo deixa de
+funcionar~\cite{geeng2019control}. O conhecimento sobre os dispositivos
+flui dos pilotos para os passageiros, e a casa tende a refletir os valores
+dos pilotos, o que dificulta que os passageiros incorporem os dispositivos
+ao seu cotidiano~\cite{koshy2021passenger}. Em um dos domicílios
+estudados por \citet{koshy2021passenger}, o piloto praticamente deixou de
+criar rotinas porque elas incomodavam a esposa: as rotinas matinais, com
+horário fixo e pensadas para a agenda dele, não combinavam com o horário
+de trabalho dela. \citet{zeng2017concerns} observaram
+um descompasso semelhante: os moradores que não administram a casa
+tendem a estar menos informados sobre os riscos de segurança e
+privacidade. \citet{zeng2019multiuser} mostram que esse desequilíbrio de
+poder aparece também em relações não abusivas e propõem como princípios
+de design a flexibilidade no controle de acesso, a agência de todos os
+usuários, o respeito entre eles e a transparência do comportamento da
+casa.
+
+Além dos moradores, há pessoas que convivem com os dispositivos sem
+participar de sua configuração. \citet{bernd2020bystanders} estudaram
+babás que trabalham em casas com dispositivos de vigilância e as
+analisaram como pessoas afetadas (\textit{bystanders}), em uma relação
+marcada pela diferença de poder entre empregador e empregada.
+\citet{geeng2019control} relatam uma tensão semelhante envolvendo o acesso
+de uma diarista a uma fechadura inteligente.
+
+Os assistentes de voz acentuam o caráter coletivo desses dispositivos. O
+uso da Amazon Echo se entrelaça com as conversas e as atividades
+simultâneas dos moradores, como as refeições em
+família~\cite{porcheron2018voice}, e a interface de voz, acessível a todos,
+amplia o acesso da família à tecnologia~\cite{beneteau2020parenting}. A
+configuração do dispositivo e de suas rotinas, no entanto, continua
+concentrada no aplicativo vinculado à conta de uma
+pessoa~\cite{barricelli2024routines}.
+
+\subsection{Rotinas como desenvolvimento pelo usuário final}
+\label{sec:rotinas}
+
+Rotinas são sequências de ações definidas pelo usuário e disparadas por
+eventos ou condições específicas~\cite{barricelli2022multimodal}. Na
+Amazon Alexa e no Google Nest, elas são criadas por meio do aplicativo
+complementar no smartphone~\cite{barricelli2024routines}. Essa forma de
+configuração corresponde à programação gatilho-ação (``se \ldots{},
+então \ldots{}''), na qual \citet{ur2014tap} mostraram que é possível
+expressar a maior parte dos comportamentos desejados pelos participantes
+de seu estudo e que usuários sem experiência aprendem rapidamente a criar
+regras com múltiplos gatilhos ou ações.
+
+Criar a rotina, porém, é só uma parte do uso. \citet{koshy2021passenger},
+retomando o estudo longitudinal de \citet{woo2015diy}, relatam que os
+usuários dedicam tempo a refinar rotinas depois de criadas, abandonam
+muitas delas e que os autores sugeriram oferecer um canal para que os
+moradores avaliem as rotinas configuradas por outros membros da casa.
+Antes da popularização dos assistentes de voz, \citet{brush2011wild} já
+apontavam a pouca flexibilidade e a dificuldade de gerenciar a automação
+residencial como barreiras à sua adoção.
+
+\subsection{Integridade contextual}
+\label{sec:integridade}
+
+Para analisar o uso de dados nas rotinas, adotamos a noção de integridade
+contextual. \citet{nissenbaum2004privacy} propõe que a proteção da
+privacidade depende das normas de cada contexto: a coleta e a circulação
+de informações devem ser adequadas ao contexto e obedecer às normas de
+distribuição que o regem. A autora distingue as normas de adequação, que
+definem quais informações sobre uma pessoa é apropriado revelar em um
+contexto, das normas de fluxo ou distribuição, que definem como essas
+informações podem circular, e afirma que não há esfera da vida em que
+``tudo é permitido''. \citet{bernd2020bystanders} usam esse referencial
+para analisar como as relações de poder entre moradores e pessoas afetadas
+moldam as normas de privacidade em casas inteligentes. No caso das
+rotinas, um dado associado a uma pessoa, como o horário de seu alarme,
+pode disparar ações percebidas por todos que estão no ambiente, o que
+caracteriza uma mudança no fluxo dessa informação.

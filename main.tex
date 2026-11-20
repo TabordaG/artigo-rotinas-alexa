@@ -12,6 +12,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx,url}
 \usepackage{multirow}
+\usepackage{array}
 \usepackage{textcomp}
 \usepackage{soul}
 \usepackage[table,xcdraw]{xcolor}
@@ -34,6 +35,28 @@
 % O pdfcomment carrega o hyperref, que por padrão desenha caixas coloridas
 % em volta de citações e links. hidelinks mantém os links clicáveis sem caixas.
 \hypersetup{hidelinks}
+
+% ---------------------------------------------------------------------
+%  Citação no texto corrido, no padrão SBC: \citet{chave} gera
+%  "Geeng e Roesner [2019]". O \cite{chave} continua gerando
+%  "[Geeng e Roesner 2019]". O sbc.bst não oferece esse comando.
+% ---------------------------------------------------------------------
+\ExplSyntaxOn
+\tl_new:N \l__artigo_cite_tl
+\NewDocumentCommand{\citet}{m}
+  {
+    \nocite{#1}
+    \cs_if_exist:cTF { b@#1 }
+      {
+        \tl_set_eq:Nc \l__artigo_cite_tl { b@#1 }
+        % Com o hyperref, o rótulo fica dentro de um link: o ano é
+        % seguido de um fecha-chaves, capturado em \2 e devolvido.
+        \regex_replace_once:nnN { \s (\d{4}[a-z]?) (\cE.)? \Z } { \ [\1]\2 } \l__artigo_cite_tl
+        \tl_use:N \l__artigo_cite_tl
+      }
+      { \textbf{?} }
+  }
+\ExplSyntaxOff
 
 % ---------------------------------------------------------------------
 %  Marcação de trechos pendentes. Troque para \pendentesfalse para
