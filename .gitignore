@@ -20,3 +20,5 @@
 # Sistema
 .DS_Store
 Thumbs.db
+*.upa
+*.upb
