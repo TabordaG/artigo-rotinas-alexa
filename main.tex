@@ -1,71 +1,69 @@
 % =====================================================================
 %  Rotinas de quem? Inspeção semiótica das Rotinas da Alexa
-%  Template: Springer LNCS/LNAI (llncs v2.26), exigido pelo BRACIS
+%  Template: SBC acessível de uma coluna, usado no IHC 2026 (Quixadá/CE)
 %  Compilar: latexmk -pdf main.tex   (ou pdflatex + bibtex + 2x pdflatex)
 % =====================================================================
-\documentclass[runningheads]{llncs}
+\documentclass[12pt]{article}
 
-% ---------------------------------------------------------------------
-%  Chaves de configuração
-% ---------------------------------------------------------------------
-% BRACIS usa revisão duplo-anônima: mantenha \anonymoustrue na submissão
-% e troque para \anonymousfalse apenas na versão final (camera-ready).
-\newif\ifanonymous
-\anonymoustrue
+\usepackage{sbc-template}   % A4, Times 12 pt, margens 3,5/2,5/3/3 cm
 
-% Mostrar marcações de pendência (\pendente{...}) no PDF.
-% Troque para \pendentesfalse antes de submeter.
-\newif\ifpendentes
-\pendentestrue
-
-% ---------------------------------------------------------------------
-%  Pacotes
-% ---------------------------------------------------------------------
+\usepackage[brazilian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-% O BRACIS exige artigos em inglês. Enquanto o texto estiver em
-% português, o idioma principal é "brazilian". Na versão em inglês,
-% troque para \usepackage[brazilian,english]{babel} (o último é o principal).
-\usepackage[english,brazilian]{babel}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{xcolor}
-\usepackage[hidelinks]{hyperref}
-% Estilo de URL do eBook da Springer (recomendado no template oficial
-% samplepaper.tex quando se usa hyperref): URLs e DOIs em azul, fonte romana.
-\urlstyle{rm}
-\renewcommand\UrlFont{\color{blue}\rmfamily}
-\usepackage{orcidlink}
+\usepackage{graphicx,url}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{soul}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage{comment}
+\usepackage{fancyhdr}
+\usepackage{IHC}            % cabeçalho com evento e trilha
+\usepackage[super]{nth}
+\usepackage{pdfcomment}     % descrição de imagens para leitores de tela (\pdftooltip)
+
+% Configurações de hifenização do template oficial
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\sloppy
 
 \graphicspath{{figures/}}
 
-% Marcação de trechos pendentes (some do PDF com \pendentesfalse)
-\newcommand{\pendente}[1]{\ifpendentes{\color{red}[PENDENTE: #1]}\fi}
+% O pdfcomment carrega o hyperref, que por padrão desenha caixas coloridas
+% em volta de citações e links. hidelinks mantém os links clicáveis sem caixas.
+\hypersetup{hidelinks}
 
 % ---------------------------------------------------------------------
+%  Marcação de trechos pendentes. Troque para \pendentesfalse para
+%  gerar a versão sem as marcações em vermelho.
+% ---------------------------------------------------------------------
+\newif\ifpendentes
+\pendentestrue
+\newcommand{\pendente}[1]{\ifpendentes{\color{red}[PENDENTE: #1]}\fi}
+
+\input{IHC_info}
+
+% ---------------------------------------------------------------------
+%  Título e autoria (o título deve estar no idioma do texto)
+% ---------------------------------------------------------------------
+\title{Rotinas de quem? Inspeção semiótica das Rotinas da Alexa\\
+sob a perspectiva da casa como usuário coletivo}
+
+\author{Nome Sobrenome\inst{1}, Nome Sobrenome\inst{1}}
+
+\address{Departamento -- Universidade\\
+  Cidade -- UF -- Brasil
+  \email{autor@exemplo.br}
+}
+
 \begin{document}
 
-\title{Rotinas de quem? Inspeção semiótica das Rotinas da Alexa sob a
-perspectiva da casa como usuário coletivo}
-\titlerunning{Rotinas de quem? Inspeção semiótica das Rotinas da Alexa}
-
-\ifanonymous
-  \author{Autoria omitida para revisão}
-  \authorrunning{Autoria omitida}
-  \institute{Instituição omitida para revisão}
-\else
-  % Preencher na versão final (camera-ready)
-  \author{Nome do Autor\inst{1}\orcidlink{0000-0000-0000-0000} \and
-          Nome do Coautor\inst{1}}
-  \authorrunning{N. Autor e N. Coautor}
-  \institute{Instituição, Cidade, Brasil\\
-             \email{autor@exemplo.br}}
-\fi
-
 \maketitle
+\thispagestyle{plain}
 
+% Resumo estruturado em inglês e em português (obrigatório no IHC)
 \input{sections/00-resumo}
 
 % ---------------------------------------------------------------------
@@ -79,22 +77,13 @@ perspectiva da casa como usuário coletivo}
 \input{sections/06-discussao}
 \input{sections/07-limitacoes}
 \input{sections/08-conclusao}
-
-% Agradecimentos: o BRACIS sugere declarar aqui o uso de IA generativa
-% na escrita. Omitido na versão anônima.
-\ifanonymous\else
-\begin{credits}
-\subsubsection{\ackname}
-\pendente{agradecimentos e declaração de uso de IA generativa}
-\subsubsection{\discintname}
-Os autores declaram não haver conflitos de interesse.
-\end{credits}
-\fi
+\input{sections/09-consideracoes-eticas}
+\input{sections/10-agradecimentos}
 
 % ---------------------------------------------------------------------
-%  Referências (estilo oficial Springer: splncs04)
+%  Referências (estilo oficial SBC: citações autor-ano)
 % ---------------------------------------------------------------------
-\bibliographystyle{splncs04}
+\bibliographystyle{sbc}
 \bibliography{references}
 
 \end{document}

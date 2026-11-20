@@ -2,16 +2,20 @@
 
 Artigo em desenvolvimento sobre a metacomunicação do aplicativo Amazon Alexa na criação e no gerenciamento de rotinas, considerando a casa como usuário coletivo. O estudo aplica o Método de Inspeção Semiótica (MIS) com uma lente para múltiplos interlocutores e triangula os achados com avaliações públicas do aplicativo.
 
-O texto segue o template Springer LNCS/LNAI (`llncs` v2.26, estilo `splncs04`), usado pelo BRACIS.
+**PDF mais recente:** [main.pdf](main.pdf)
+
+O texto segue o **template acessível de uma coluna da SBC**, exigido nas trilhas de artigos completos do IHC 2026 (XXV Simpósio Brasileiro sobre Fatores Humanos em Sistemas Computacionais, Quixadá/CE).
 
 ## Estrutura
 
 ```
 .
-├── main.tex                  # documento principal e configurações
-├── references.bib            # referências (BibTeX), conferidas em fonte primária
+├── main.tex                       # documento principal e configurações
+├── main.pdf                       # versão compilada mais recente
+├── references.bib                 # referências (BibTeX), conferidas em fonte primária
+├── IHC_info.tex                   # trilha, local, ano e edição do evento (cabeçalho)
 ├── sections/
-│   ├── 00-resumo.tex
+│   ├── 00-resumo.tex              # Abstract e Resumo estruturados
 │   ├── 01-introducao.tex
 │   ├── 02-fundamentacao.tex
 │   ├── 03-trabalhos-relacionados.tex
@@ -19,10 +23,13 @@ O texto segue o template Springer LNCS/LNAI (`llncs` v2.26, estilo `splncs04`), 
 │   ├── 05-resultados.tex
 │   ├── 06-discussao.tex
 │   ├── 07-limitacoes.tex
-│   └── 08-conclusao.tex
-├── figures/                  # imagens (prints do app, diagramas)
-├── llncs.cls                 # classe oficial Springer LNCS
-└── splncs04.bst              # estilo oficial de referências Springer
+│   ├── 08-conclusao.tex
+│   ├── 09-consideracoes-eticas.tex
+│   └── 10-agradecimentos.tex
+├── figures/                       # imagens (prints do app, diagramas)
+├── sbc-template.sty               # estilo oficial SBC (margens, fontes, títulos)
+├── IHC.sty                        # cabeçalho do IHC
+└── sbc.bst                        # estilo oficial de referências SBC (autor-ano)
 ```
 
 ## Como compilar
@@ -35,25 +42,22 @@ latexmk -pdf main.tex
 
 Ou sem `latexmk`: `pdflatex main`, `bibtex main`, `pdflatex main`, `pdflatex main`.
 
-No Overleaf: crie um projeto, envie todos os arquivos (ou importe este repositório pelo GitHub) e compile `main.tex`.
+No Overleaf: *New Project → Import from GitHub*, selecione este repositório e compile `main.tex`.
 
-## Chaves de configuração em `main.tex`
+Os trechos ainda não escritos aparecem em vermelho como `[PENDENTE: ...]`. Para gerar uma versão sem eles, troque `\pendentestrue` por `\pendentesfalse` em `main.tex`.
 
-| Chave | Uso |
-|---|---|
-| `\anonymoustrue` / `\anonymousfalse` | O BRACIS usa revisão duplo-anônima. Mantenha `\anonymoustrue` na submissão. |
-| `\pendentestrue` / `\pendentesfalse` | Mostra ou esconde as marcações `\pendente{...}` em vermelho. |
-| `babel` | O texto está em português. O BRACIS exige inglês: na versão final, troque para `\usepackage[brazilian,english]{babel}`. |
+## Formato exigido pelo IHC 2026
 
-## Requisitos do BRACIS (edição 2026)
+- Folha A4, uma coluna; margens de 3,5 cm (superior), 2,5 cm (inferior) e 3 cm (laterais).
+- Times 12 pt, títulos de seção em 13 pt e título do artigo em 16 pt, em negrito.
+- Resumo estruturado (Introdução, Objetivo, Metodologia, Resultados), com no máximo 10 linhas; em artigos em português, Abstract e Resumo são obrigatórios.
+- Sugestão de 15 a 20 páginas, sem contar as referências. O texto pode ser em português ou inglês.
+- Seção obrigatória "Considerações Éticas", com base nas Resoluções CNS n.º 466/2012, 510/2016 e 674/2022, e medidas de proteção de dados conforme a LGPD.
+- Declaração do uso de IA generativa na escrita, de preferência nos Agradecimentos.
+- Figuras com descrição acessível via `\pdftooltip{...}{descrição}` (pacote `pdfcomment`).
 
-- Artigo em inglês, com no máximo 15 páginas, incluindo figuras, tabelas, referências e apêndices.
-- Template Springer LNCS, publicado na série LNAI.
-- Revisão duplo-anônima: nenhuma informação que identifique autores ou instituições.
-- O uso de IA generativa na escrita deve ser declarado nos agradecimentos.
-
-Fonte: [chamada do BRACIS 2026](https://bracis.sbc.org.br/2026/bracis/).
+Fonte: [instruções para artigos completos do IHC 2026](https://ihc.sbc.org.br/2026/index.php/en/full-papers/).
 
 ## Licença
 
-O texto do artigo é de autoria dos responsáveis por este repositório. Os arquivos `llncs.cls` e `splncs04.bst` são distribuídos pela Springer Nature sob a licença CC BY 4.0.
+O texto do artigo é de autoria dos responsáveis por este repositório. Os arquivos de estilo (`sbc-template.sty`, `IHC.sty`, `sbc.bst`) são do template oficial da SBC e do IHC 2026.

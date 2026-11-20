@@ -16,8 +16,6 @@
 *.vrb
 *.xdv
 
-# PDF gerado (compile localmente ou no Overleaf)
-main.pdf
 
 # Sistema
 .DS_Store
