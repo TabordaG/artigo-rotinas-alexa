@@ -1,6 +1,6 @@
 # Rotinas de quem? Inspeção semiótica das Rotinas da Alexa
 
-Artigo em desenvolvimento sobre a metacomunicação do aplicativo Amazon Alexa na criação e no gerenciamento de rotinas, considerando a casa como usuário coletivo. O estudo aplica o Método de Inspeção Semiótica (MIS) com uma lente para múltiplos interlocutores e triangula os achados com avaliações públicas do aplicativo.
+Artigo em desenvolvimento sobre a metacomunicação do aplicativo Amazon Alexa na criação e no gerenciamento de rotinas, considerando a casa como usuário coletivo. O estudo aplica o Método de Inspeção Semiótica (MIS) com uma lente para múltiplos interlocutores, guiado por duas personas fundamentadas na literatura: quem administra a conta e quem convive com as rotinas sem administrá-las.
 
 **PDF mais recente:** [main.pdf](main.pdf)
 
@@ -17,15 +17,14 @@ O texto segue o **template acessível de uma coluna da SBC**, exigido nas trilha
 ├── sections/
 │   ├── 00-resumo.tex              # Abstract e Resumo estruturados
 │   ├── 01-introducao.tex
-│   ├── 02-fundamentacao.tex
-│   ├── 03-trabalhos-relacionados.tex
-│   ├── 04-metodo.tex
-│   ├── 05-resultados.tex
-│   ├── 06-discussao.tex
-│   ├── 07-limitacoes.tex
-│   ├── 08-conclusao.tex
-│   ├── 09-consideracoes-eticas.tex
-│   └── 10-agradecimentos.tex
+│   ├── 02-fundamentacao.tex       # inclui os trabalhos relacionados
+│   ├── 03-metodo.tex
+│   ├── 04-resultados.tex
+│   ├── 05-discussao.tex
+│   ├── 06-limitacoes.tex
+│   ├── 07-conclusao.tex
+│   ├── 08-consideracoes-eticas.tex
+│   └── 09-agradecimentos.tex
 ├── figures/                       # imagens (prints do app, diagramas)
 ├── sbc-template.sty               # estilo oficial SBC (margens, fontes, títulos)
 ├── IHC.sty                        # cabeçalho do IHC
