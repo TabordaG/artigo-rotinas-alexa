@@ -1,0 +1,24 @@
+# Arquivos auxiliares do LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.run.xml
+*-blx.bib
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# PDF gerado (compile localmente ou no Overleaf)
+main.pdf
+
+# Sistema
+.DS_Store
+Thumbs.db

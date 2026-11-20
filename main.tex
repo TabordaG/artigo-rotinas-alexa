@@ -1,0 +1,97 @@
+% =====================================================================
+%  Rotinas de quem? Inspeção semiótica das Rotinas da Alexa
+%  Template: Springer LNCS/LNAI (llncs v2.26), exigido pelo BRACIS
+%  Compilar: latexmk -pdf main.tex   (ou pdflatex + bibtex + 2x pdflatex)
+% =====================================================================
+\documentclass[runningheads]{llncs}
+
+% ---------------------------------------------------------------------
+%  Chaves de configuração
+% ---------------------------------------------------------------------
+% BRACIS usa revisão duplo-anônima: mantenha \anonymoustrue na submissão
+% e troque para \anonymousfalse apenas na versão final (camera-ready).
+\newif\ifanonymous
+\anonymoustrue
+
+% Mostrar marcações de pendência (\pendente{...}) no PDF.
+% Troque para \pendentesfalse antes de submeter.
+\newif\ifpendentes
+\pendentestrue
+
+% ---------------------------------------------------------------------
+%  Pacotes
+% ---------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+% O BRACIS exige artigos em inglês. Enquanto o texto estiver em
+% português, o idioma principal é "brazilian". Na versão em inglês,
+% troque para \usepackage[brazilian,english]{babel} (o último é o principal).
+\usepackage[english,brazilian]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
+
+\graphicspath{{figures/}}
+
+% Marcação de trechos pendentes (some do PDF com \pendentesfalse)
+\newcommand{\pendente}[1]{\ifpendentes{\color{red}[PENDENTE: #1]}\fi}
+
+% ---------------------------------------------------------------------
+\begin{document}
+
+\title{Rotinas de quem? Inspeção semiótica das Rotinas da Alexa sob a
+perspectiva da casa como usuário coletivo}
+\titlerunning{Rotinas de quem? Inspeção semiótica das Rotinas da Alexa}
+
+\ifanonymous
+  \author{Autoria omitida para revisão}
+  \authorrunning{Autoria omitida}
+  \institute{Instituição omitida para revisão}
+\else
+  % Preencher na versão final (camera-ready)
+  \author{Nome do Autor\inst{1}\orcidlink{0000-0000-0000-0000} \and
+          Nome do Coautor\inst{1}}
+  \authorrunning{N. Autor e N. Coautor}
+  \institute{Instituição, Cidade, Brasil\\
+             \email{autor@exemplo.br}}
+\fi
+
+\maketitle
+
+\input{sections/00-resumo}
+
+% ---------------------------------------------------------------------
+%  Corpo do artigo (uma seção por arquivo)
+% ---------------------------------------------------------------------
+\input{sections/01-introducao}
+\input{sections/02-fundamentacao}
+\input{sections/03-trabalhos-relacionados}
+\input{sections/04-metodo}
+\input{sections/05-resultados}
+\input{sections/06-discussao}
+\input{sections/07-limitacoes}
+\input{sections/08-conclusao}
+
+% Agradecimentos: o BRACIS sugere declarar aqui o uso de IA generativa
+% na escrita. Omitido na versão anônima.
+\ifanonymous\else
+\begin{credits}
+\subsubsection{\ackname}
+\pendente{agradecimentos e declaração de uso de IA generativa}
+\subsubsection{\discintname}
+Os autores declaram não haver conflitos de interesse.
+\end{credits}
+\fi
+
+% ---------------------------------------------------------------------
+%  Referências (estilo oficial Springer: splncs04)
+% ---------------------------------------------------------------------
+\bibliographystyle{splncs04}
+\bibliography{references}
+
+\end{document}

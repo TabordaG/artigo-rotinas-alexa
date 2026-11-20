@@ -1,0 +1,120 @@
+% =====================================================================
+%  1 Introdução
+% =====================================================================
+\section{Introdução}
+\label{sec:introducao}
+
+Assistentes de voz instalados em alto-falantes inteligentes, como a Amazon
+Alexa nos dispositivos Echo, passaram a fazer parte do cotidiano doméstico.
+Estudos baseados em registros de uso mostram que ouvir música, fazer buscas
+e controlar outros dispositivos da casa estão entre as atividades mais
+frequentes com esses assistentes~\cite{ammari2019music}. Diferentemente de
+um smartphone, o alto-falante costuma ficar em um espaço comum da casa, e
+seu uso se entrelaça com as conversas e as atividades simultâneas dos
+moradores, como as refeições em família~\cite{porcheron2018voice}.
+
+Entre os recursos oferecidos pela Alexa estão as Rotinas, que permitem
+associar um evento disparador (um horário, um comando de voz, um alarme) a
+uma sequência de ações executadas pelo assistente e pelos dispositivos
+conectados. A criação de rotinas segue o modelo de regras gatilho-ação
+típico do desenvolvimento pelo usuário final e é feita, principalmente, por
+meio do aplicativo complementar instalado no
+smartphone~\cite{barricelli2024routines,barricelli2022multimodal}. As
+pesquisas sobre o tema concentram-se em facilitar essa autoria, comparando
+a criação pelo aplicativo, por conversa e por interação multimodal em
+alto-falantes com tela~\cite{barricelli2024routines,barricelli2022multimodal}.
+
+Há, porém, uma diferença entre quem cria uma rotina e quem a vivencia. A
+rotina é configurada por uma pessoa, no aplicativo associado à sua conta, e
+executada em um ambiente compartilhado, onde afeta todos que estão
+presentes. Estudos sobre casas inteligentes com múltiplos usuários mostram
+que a instalação e a configuração tendem a se concentrar em um morador, o
+que gera assimetrias de controle e tensões com os demais
+residentes~\cite{geeng2019control,zeng2019multiuser}. Pessoas que trabalham
+ou convivem no espaço doméstico, como babás, também são afetadas por esses
+sistemas sem participar das decisões sobre eles~\cite{bernd2020bystanders}.
+Sob a perspectiva da integridade contextual~\cite{nissenbaum2004privacy},
+quando um dado ligado a uma pessoa, como seu horário ou sua voz, dispara
+uma ação em um espaço coletivo, a informação passa a circular em um
+contexto diferente daquele em que foi fornecida.
+
+Os trabalhos citados investigam essas questões empiricamente, com
+moradores, ou avaliam a usabilidade da autoria de rotinas considerando um
+único autor. Recebe menos atenção a forma como a própria interface comunica
+o que é uma rotina, quem a controla e a quem ela afeta. A Engenharia
+Semiótica oferece uma lente para essa análise ao tratar a interface como
+uma mensagem do designer para o usuário, isto é, como
+metacomunicação~\cite{desouza2005semiotic}. O Método de Inspeção Semiótica
+(MIS), derivado dessa teoria, permite reconstruir essa mensagem a partir
+dos signos da interface, sem a participação de
+usuários~\cite{desouza2006sim,desouza2009methods}, e já foi adaptado a
+diferentes contextos de aplicação~\cite{fortunato2025adaptations}. Até onde
+pudemos verificar, o método ainda não foi aplicado à criação e ao
+gerenciamento de rotinas em assistentes de voz. Além disso, a MIS pressupõe
+um destinatário da metamensagem, enquanto no caso das rotinas há ao menos
+dois: quem cria a rotina e quem é afetado por ela.
+
+Essa lacuna se relaciona com os Grandes Desafios de Pesquisa em IHC no
+Brasil para 2025-2035 (GranDIHC-BR)~\cite{pereira2024grandihc}. O trabalho
+se insere principalmente no GC4, que trata dos aspectos socioculturais em
+IHC~\cite{neris2024gc4}, ao examinar uma tecnologia concebida em torno de
+uma conta individual e usada em arranjos domésticos coletivos. Contribui
+também para o GC1, voltado a novas abordagens teóricas e
+metodológicas~\cite{dasilvajunior2024gc1}, ao propor uma adaptação da MIS
+que considera múltiplos interlocutores. Por fim, dialoga com o GC7, que
+aborda a interação com tecnologias emergentes como um ecossistema que
+integra pessoas, tecnologias e contextos~\cite{zaina2024gc7}.
+
+Diante disso, este artigo tem como objetivo avaliar a metacomunicação do
+aplicativo Amazon Alexa na criação e no gerenciamento de rotinas,
+considerando a casa como usuário coletivo, e derivar implicações de design
+para lares compartilhados. A pesquisa é orientada pela seguinte questão
+principal: como o aplicativo Amazon Alexa comunica a criação e o
+funcionamento de rotinas, e a quem essa comunicação se dirige em uma casa
+compartilhada? Dela derivam três questões específicas:
+
+\begin{itemize}
+  \item \textbf{QP1:} Que metamensagem o designer transmite sobre autoria,
+        uso de dados e pessoas afetadas pelas rotinas?
+  \item \textbf{QP2:} Que potenciais rupturas de comunicação a inspeção
+        identifica para quem cria a rotina, para os demais membros da casa
+        e para as pessoas afetadas por ela?
+  \item \textbf{QP3:} Essas rupturas aparecem nas avaliações públicas do
+        aplicativo feitas por usuários brasileiros, e que problemas as
+        avaliações revelam que a inspeção não antecipou?
+\end{itemize}
+
+Para responder a essas questões, aplicamos a MIS ao aplicativo Amazon
+Alexa em português, com cenários de inspeção que incluem a criação de
+rotinas, as sugestões do sistema, o histórico de atividades e o acesso de
+um segundo membro da casa. Em cada etapa da inspeção, os signos foram
+analisados quanto ao que comunicam a quem cria a rotina e ao que comunicam
+sobre quem é afetado por ela. Os resultados foram triangulados com a
+análise de avaliações públicas do aplicativo nas lojas brasileiras, seguindo
+estudos anteriores que analisaram avaliações de usuários de sistemas
+conversacionais~\cite{atefi2020reviews}. Nenhum participante foi recrutado:
+a inspeção usou personas fictícias e contas dos próprios pesquisadores, e
+as avaliações analisadas são de acesso público.
+
+As contribuições deste trabalho são:
+
+\begin{itemize}
+  \item a reconstrução da metamensagem do aplicativo de Rotinas da Alexa,
+        evidenciando a quem o design se dirige;
+  \item um catálogo de potenciais rupturas de comunicação para autores,
+        membros e pessoas afetadas, triangulado com avaliações reais de
+        usuários;
+  \item uma adaptação da MIS que inclui uma lente para múltiplos
+        interlocutores, aplicável a outros sistemas de uso coletivo;
+  \item implicações de design para rotinas em casas compartilhadas.
+\end{itemize}
+
+O restante do artigo está organizado da seguinte forma. A
+Seção~\ref{sec:fundamentacao} apresenta a fundamentação teórica sobre
+Engenharia Semiótica, casas inteligentes com múltiplos usuários e
+integridade contextual. A Seção~\ref{sec:relacionados} discute os trabalhos
+relacionados. A Seção~\ref{sec:metodo} descreve o método. A
+Seção~\ref{sec:resultados} apresenta os resultados da inspeção e da análise
+das avaliações, discutidos na Seção~\ref{sec:discussao}. A
+Seção~\ref{sec:limitacoes} apresenta as limitações, e a
+Seção~\ref{sec:conclusao}, as conclusões e os trabalhos futuros.
