@@ -4,11 +4,6 @@
 \section{Fundamentação Teórica}
 \label{sec:fundamentacao}
 
-Esta seção apresenta os conceitos usados no artigo: a Engenharia
-Semiótica e o Método de Inspeção Semiótica, os papéis dos moradores em
-casas inteligentes compartilhadas e as rotinas. Ao final, discute os
-trabalhos relacionados.
-
 \subsection{Engenharia Semiótica e comunicabilidade}
 \label{sec:engsem}
 
@@ -52,45 +47,26 @@ as três versões em busca de ambiguidades e contradições; e, por fim, faz
 uma apreciação da comunicabilidade do
 sistema~\cite{desouza2006sim,fortunato2025ihc}.
 
-O método foi adaptado a contextos que a versão original não cobria.
-\citet{fortunato2025ihc} identificaram cinco variantes, que acrescentam
-novos tipos de signos ou inspecionam mais de uma versão da metamensagem,
-como diferentes plataformas de um sistema ou a interface percebida por
-meio de um leitor de tela. Uma delas, a MIS com signos dêiticos,
-considera referências à identidade do usuário, ao espaço e ao tempo da
-interação~\cite{fortunato2025ihc}. Nenhuma das variantes trata de uma
-metamensagem que alcança mais de um destinatário, situação examinada
-neste trabalho.
+\subsection{Rotinas}
+\label{sec:rotinas}
 
-\subsection{Casas compartilhadas e rotinas}
-\label{sec:multiusuario}
+Rotinas são sequências de ações definidas pelo usuário e disparadas por
+eventos ou condições, como um horário ou um comando de
+voz~\cite{barricelli2022multimodal}. Os dois principais ecossistemas de
+alto-falantes inteligentes oferecem o recurso: nos dispositivos Amazon
+Echo, as rotinas são criadas no aplicativo Amazon Alexa, e nos Google
+Nest, no aplicativo Google Home, ambos instalados no
+smartphone~\cite{barricelli2024routines}. A criação segue a lógica da
+programação gatilho-ação (``se \ldots{}, então \ldots{}''), que usuários
+sem experiência aprendem rapidamente~\cite{ur2014tap}.
 
-Dispositivos de casa inteligente instalados em espaços comuns são usados
-por várias pessoas e afetam todas elas~\cite{geeng2019control}. Os estudos
-sobre esses ambientes distinguem papéis entre os moradores.
-\citet{koshy2021passenger} chamam de \textbf{pilotos} os que introduzem
-funcionalidades na casa, instalando dispositivos ou criando rotinas, e de
-\textbf{passageiros} os que usam o que já existe; \citet{geeng2019control}
-descrevem um papel equivalente ao do piloto, o \textit{smart home driver}.
-O piloto costuma ser o único com acesso à \textbf{conta} à qual os
-dispositivos estão vinculados~\cite{geeng2019control}. Há ainda as
-\textbf{pessoas afetadas} (\textit{bystanders}), que convivem com os
-dispositivos sem participar de sua configuração, como quem trabalha na
-casa~\cite{bernd2020bystanders}.
-
-Na Alexa, as \textbf{rotinas} são sequências de ações definidas pelo
-usuário e disparadas por eventos ou condições, como um horário ou um
-comando de voz~\cite{barricelli2022multimodal}. Elas são criadas no
-aplicativo complementar instalado no smartphone, vinculado à conta de
-quem configurou o dispositivo~\cite{barricelli2024routines}, e seguem a
-lógica da programação gatilho-ação (``se \ldots{}, então \ldots{}''), que
-usuários sem experiência aprendem rapidamente~\cite{ur2014tap}. Assim, a
-rotina é criada por uma pessoa e executada para todos que estão no
-ambiente. Quando um dado dessa pessoa, como o horário do seu alarme,
-dispara uma ação percebida por todos, a informação passa a circular fora
-do contexto em que foi fornecida. \citet{nissenbaum2004privacy} trata
-essa questão como \textbf{integridade contextual}: a adequação de um
-fluxo de informação depende das normas do contexto em que ele ocorre.
+Como o aplicativo fica vinculado à conta de quem configurou o
+dispositivo, a rotina é criada por uma pessoa e executada para todos que
+estão no ambiente. Quando um dado dessa pessoa, como o horário do seu
+remédio ou do seu alarme, dispara uma fala percebida por todos, a
+informação circula em um contexto diferente daquele em que foi
+fornecida, o que \citet{nissenbaum2004privacy} trata como uma questão de
+integridade contextual.
 
 \subsection{Trabalhos relacionados}
 \label{sec:relacionados}
@@ -98,61 +74,82 @@ fluxo de informação depende das normas do contexto em que ele ocorre.
 A pesquisa sobre rotinas em assistentes de voz tem se concentrado em
 facilitar a sua criação. \citet{barricelli2022multimodal} propuseram usar
 os recursos multimodais (visão, fala e toque) dos dispositivos Echo Show
-para criar rotinas diretamente no alto-falante, forma que os usuários
-consideraram mais fácil do que o aplicativo da Alexa.
+para criar rotinas diretamente no alto-falante, e os usuários
+consideraram essa forma mais fácil do que a interação habitual com o
+aplicativo Alexa. \citet{barricelli2024routines} ampliaram a proposta
+para alto-falantes com e sem tela, da Amazon e do Google, e compararam, em
+experimentos com 40 participantes, a criação de rotinas por interação
+multimodal e apenas por voz. A interação multimodal foi a preferida, e a
+qualidade percebida pareceu depender da marca do dispositivo.
 
-\citet{barricelli2024routines} ampliaram essa proposta para alto-falantes
-com e sem tela, da Amazon e do Google, e compararam, em experimentos com
-40 participantes, a criação de rotinas por interação multimodal e apenas
-por voz. A interação multimodal foi a preferida, e a qualidade percebida
-pareceu depender da marca do dispositivo. Nos dois trabalhos, o
-participante é a pessoa que cria a rotina.
-
-O mesmo vale para as propostas baseadas em grandes modelos de linguagem.
+Os grandes modelos de linguagem abriram outro caminho para a autoria.
 \citet{king2024sasha} apresentaram o Sasha, que gera planos de ação e
 rotinas a partir de pedidos pouco especificados, como ``deixe
 aconchegante'', e mostraram que esses modelos raciocinam de forma
 criativa, mas apresentam padrões de falha que reduzem sua utilidade.
-Também aqui o foco está em interpretar o que um usuário pede, sem
-considerar quem mais será afetado pela rotina.
+\citet{giudici2024greenifttt} usaram um modelo de linguagem para ajudar o
+usuário a criar rotinas de economia de energia e avaliaram a usabilidade
+da proposta com 13 participantes. Em todos esses trabalhos, o
+participante é a pessoa que cria a rotina, e a avaliação recai sobre a
+facilidade de criá-la.
 
-São os estudos sobre casas compartilhadas que trazem essas outras pessoas
-para o centro da análise. \citet{geeng2019control} entrevistaram 18
-moradores, em sua maioria \textit{drivers}, e acompanharam por três
+Os estudos sobre casas inteligentes compartilhadas trazem para a análise
+as outras pessoas da casa. \citet{geeng2019control} entrevistaram 18
+moradores, em sua maioria responsáveis pela adoção dos dispositivos, a
+quem chamaram de \textit{smart home drivers}, e acompanharam por três
 semanas as tensões relatadas por eles. Observaram que o conhecimento, o
 acesso e o controle se concentram em quem instala os dispositivos, que
-muitos \textit{drivers} não consultaram os demais antes da instalação e
-que os outros moradores dependem deles quando algo falha. Os autores
-recomendam que os aplicativos perguntem, já na configuração, se há
-outras pessoas na casa.
+costuma ser o único com acesso à conta à qual eles estão vinculados; que
+muitos \textit{drivers} não consultaram os demais moradores antes da
+instalação; e que os outros moradores dependem deles quando algo falha.
 
-\citet{koshy2021passenger} deram voz aos passageiros, ouvindo
-separadamente os membros de 12 domicílios, e incluíram a criação de
-rotinas na definição de piloto. Concluíram que a casa tende a refletir os
-valores dos pilotos e relataram o caso de um piloto que deixou de criar
-rotinas matinais porque elas, pensadas para a sua agenda, não combinavam
-com o horário de trabalho da esposa. Entre suas recomendações está dar
-aos passageiros mais controle sobre os dados que compartilham.
+\citet{koshy2021passenger} deram voz a esses outros moradores. Com 24
+entrevistas em 12 domicílios, feitas separadamente com cada morador, e um
+levantamento com 178 respondentes, distinguiram os usuários
+\textbf{pilotos}, que introduzem funcionalidades na casa instalando
+dispositivos ou criando rotinas, dos \textbf{passageiros}, que usam o que
+já existe. Pelo menos 52\% dos respondentes que moravam com outras
+pessoas viviam em casas com os dois papéis. Os autores concluíram que a
+casa tende a refletir os valores dos pilotos e relataram o caso de um
+piloto que deixou de criar rotinas matinais porque elas, pensadas para a
+sua agenda, não combinavam com o horário de trabalho da esposa.
 
-\citet{zeng2019multiuser} transformaram recomendações desse tipo em um
-protótipo de aplicativo com controle de acesso e notificações de
-atividade, testado por um mês em sete domicílios. Em algumas casas, as
-normas de convivência dispensaram os controles técnicos, e o aumento da
-complexidade das opções reduziu a usabilidade. Esses três estudos
-dependem de participantes e, embora suas recomendações se dirijam às
-interfaces de configuração, não examinam como as interfaces comerciais
-comunicam hoje a autoria e os efeitos das rotinas.
+A diferença entre pilotos e passageiros também aparece na segurança e na
+privacidade. \citet{zeng2017concerns} observaram que os moradores que não
+administram a casa tendem a estar menos informados sobre os riscos, e
+\citet{zeng2019multiuser} mostraram que o desequilíbrio de poder ocorre
+mesmo em relações não abusivas. Para enfrentá-lo, esses últimos
+testaram, por um mês em sete domicílios, um aplicativo com controle de
+acesso e notificações de atividade; em algumas casas, as normas de
+convivência dispensaram os controles técnicos, e o aumento da
+complexidade das opções reduziu a usabilidade. O problema alcança ainda
+quem não administra nem mora na casa: \citet{bernd2020bystanders}
+analisaram babás como pessoas afetadas (\textit{bystanders}) pelos
+dispositivos de seus empregadores, à luz da integridade contextual.
 
-A Engenharia Semiótica oferece um caminho para esse exame. A SIM-SR foi
-aplicada em três estudos de caso e levou os avaliadores a considerar o
-impacto dos problemas de acessibilidade na comunicabilidade, indo além da
-identificação de violações das diretrizes WCAG~\cite{carvalho2023simsr}.
-Assim como as demais variantes reunidas por \citet{fortunato2025ihc}, ela
-compara versões da metamensagem percebidas de formas diferentes, mas
-nenhuma dessas aplicações se voltou aos assistentes de voz. Este trabalho
-reúne as três linhas discutidas nesta seção: trata das rotinas, como os
-estudos sobre sua criação; considera quem convive com elas sem
-administrá-las, como os estudos sobre casas compartilhadas; e o faz sem
-envolver participantes, por meio da MIS, comparando a metamensagem do
-ponto de vista de duas personas: quem administra a conta e cria as
-rotinas e quem convive com elas sem administrá-las.
+Nos assistentes de voz, essa assimetria assume uma forma particular. A
+interface de voz, acessível a todos, amplia o acesso da família à
+tecnologia~\cite{beneteau2020parenting}, e o uso do Echo se entrelaça com
+as conversas e as atividades simultâneas dos
+moradores~\cite{porcheron2018voice}. A configuração, porém, continua no
+aplicativo de uma única conta~\cite{barricelli2024routines}. Os estudos
+citados recomendam mudanças justamente nessas interfaces, como perguntar,
+já na configuração, se há outras pessoas na casa~\cite{geeng2019control}
+e dar aos passageiros mais controle sobre os dados que
+compartilham~\cite{koshy2021passenger}, mas não examinam o que as
+interfaces comerciais comunicam hoje a cada morador.
+
+Esses trabalhos justificam o estudo proposto por duas razões. Primeiro, a
+pesquisa sobre rotinas avalia apenas quem as cria, embora elas sejam
+executadas para toda a casa. Segundo, os estudos sobre casas
+compartilhadas mostram, com participantes, que quem não administra a
+conta tem menos controle e menos informação, e recomendam mudanças nas
+interfaces de configuração, mas não analisam o que essas interfaces
+comunicam hoje a cada morador. O MIS permite essa análise sem envolver
+participantes. Este trabalho realiza, assim, um estudo de caso com a
+Amazon Alexa, inspecionando o aplicativo e o Echo do ponto de vista de
+duas personas da mesma casa: o piloto, que administra a conta e cria as
+rotinas, e um passageiro, que convive com elas sem administrá-las. Ao
+comparar o que a mesma interface comunica a cada um, o estudo contribui
+para o GC4, ao examinar uma tecnologia concebida para uma conta
+individual e usada em um arranjo doméstico coletivo.
