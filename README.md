@@ -1,6 +1,6 @@
 # Rotinas de quem? Inspeção semiótica das Rotinas da Alexa
 
-Artigo em desenvolvimento sobre a metacomunicação do aplicativo Amazon Alexa na criação e no gerenciamento de rotinas, considerando a casa como usuário coletivo. O estudo aplica o Método de Inspeção Semiótica (MIS) com uma lente para múltiplos interlocutores, guiado por duas personas fundamentadas na literatura: quem administra a conta e quem convive com as rotinas sem administrá-las.
+Artigo em desenvolvimento sobre a metacomunicação do aplicativo Amazon Alexa e do Echo sobre as rotinas, do ponto de vista de quem as opera e de quem convive com elas. O estudo de caso aplica o Método de Inspeção Semiótica (MIS) guiado por duas personas da mesma casa, fundamentadas na literatura: quem administra a conta e quem convive com as rotinas sem administrá-las.
 
 **PDF mais recente:** [main.pdf](main.pdf)
 
